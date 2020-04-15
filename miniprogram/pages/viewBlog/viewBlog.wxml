@@ -1,0 +1,28 @@
+<view class="container">
+<view class="page-section">
+  <view class="weui-cells weui-cells_before-title" wx:key="key" wx:for="{{post}}">
+    <image src="{{item.thumbnail}}"></image>
+    <view class="blog-section">
+      <view class="blog-title">
+        <view>{{item.title}}</view>
+      </view>
+      <view class="blog-meta">
+        <view>{{item.author}}</view>
+
+      </view>
+
+
+      <view class="blog-content">
+                <view>{{item.content}}</view>
+        <view class="section">
+
+        </view>
+        <view class="section">
+        </view>
+      </view>
+
+    </view>
+  </view>
+</view>
+
+</view>
