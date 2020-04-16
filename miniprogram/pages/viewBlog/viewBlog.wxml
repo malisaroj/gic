@@ -7,7 +7,7 @@
         <view>{{item.title}}</view>
       </view>
       <view class="blog-meta">
-        <view>{{item.author}}</view>
+        <view>By {{item.author}}</view>
 
       </view>
 
