@@ -1,4 +1,5 @@
 {
-  "navigationBarTitleText": "选择基础库",
-  "usingComponents": {}
+  "usingComponents": {
+        "mp-tabbar": "../components/tabbar/tabbar"
+  }
 }

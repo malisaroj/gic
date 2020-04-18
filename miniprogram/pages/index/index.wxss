@@ -1,5 +1,9 @@
 /**index.wxss**/
 
+.container {
+  padding-bottom: 100rpx;
+}
+
 page {
   background: #f6f6f6;
   display: flex;
@@ -37,7 +41,6 @@ page {
 .userinfo-avatar[size] {
   width: 100rpx;
 }
-
 
 .userinfo-avatar:after {
   border: none;
@@ -166,6 +169,19 @@ page {
   padding: 0 4rpx;
 }
 
+.category-col {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(8);
+  grid-gap: 30rpx;
+}
+
+.category-image {
+  width: 300rpx;
+  height: 300rpx;
+  border-radius: 30rpx;
+}
+
 .post-container {
   background-color: white;
   border-radius: 20rpx;
@@ -189,7 +205,6 @@ page {
 .column-category {
   width: 100%;
   padding-top: 20rpx;
-
 }
 
 .category {
@@ -216,7 +231,7 @@ page {
                  Arial,
                  sans-serif;
   font-size: 30rpx;
-  padding: 10rpx;
+  padding-top: 30rpx;
 }
 
 /* Image Carousel */
@@ -228,10 +243,24 @@ page {
   width: 90%;
   height: 100%;
   background: white;
+  margin: 40rpx 0;
 }
 
 .swipimg {
   width: 100%;
   height: 100%;
   border-radius: 20rpx;
+}
+
+.title {
+  color: black;
+  font-family: 'Trebuchet MS',
+                 'Lucida Sans Unicode',
+                 'Lucida Grande',
+                 'Lucida Sans',
+                 Arial,
+                 sans-serif;
+  font-size: 50rpx;
+  padding: 20rpx;
+  font-weight: 700;
 }

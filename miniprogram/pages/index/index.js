@@ -9,39 +9,48 @@ Page({
     takeSession: false,
     requestResult: '',
     imgUrls: [
-      '../../images/topic2.png',
       '../../images/topic3.png',
-      '../../images/topic4.png',
-      '../../images/topic5.png',
-      '../../images/topic1.jpg'
+      '../../images/topic1.jpg',
+      '../../images/topic1.png'
     ],
     indicatorDots: true,
     autoplay: true,
     interval: 5000,
     duration: 1000,
     list: [{
-      "text": "",
-      "iconPath": "../../icons/home-2-fill.png",
-      "selectedIconPath": "../../icons/home-2-fill.png",
-      dot: true
-    },
-    {
-      "text": "",
-      "iconPath": "../../icons/funds-fill.png",
-      "selectedIconPath": "../../icons/funds-fill.png",
-    },
-    {
-      "text": "",
-      "iconPath": "../../icons/road-map-fill.png",
-      "selectedIconPath": "../../icons/road-map-fill.png",
-    },
-    {
-      "text": "",
-      "iconPath": "../../icons/feedback-fill.png",
-      "selectedIconPath": "../../icons/feedback-fill.png",
-    }
+        "text": "",
+        "iconPath": "../../icons/home-2-fill.png",
+        "selectedIconPath": "../../icons/home-2-fill.png",
+      },
+      {
+        "text": "",
+        "iconPath": "../../icons/feedback-fill.png",
+        "selectedIconPath": "../../icons/feedback-fill.png",
+      }
     ],
-  
+
+    topicUrls: [{
+        "categoryTitle": "Tour Guide",
+        "urls": "../../images/tour-guide.jpg"
+      },
+      {
+        "categoryTitle": "Education",
+        "urls": "../../images/education.jpg"
+      },
+      {
+        "categoryTitle": "Life Style",
+        "urls": "../../images/life-style.jpg"
+      },
+      {
+        "categoryTitle": "Relationship",
+        "urls": "../../images/relationship.jpg"
+      },
+      {
+        "categoryTitle": "Health",
+        "urls": "../../images/health.jpg"
+      }
+    ],
+
   },
 
   changeIndicatorDots: function(e) {
@@ -71,6 +80,14 @@ Page({
 
     wx.navigateTo({
       url: '../viewBlog/viewBlog?id=' + id,
+    })
+  },
+
+  viewCategory: function(event) {
+    let title = event.currentTarget.dataset.id;
+    
+    wx.navigateTo({
+      url: '../viewCategory/viewCategory?id=' + title,
     })
   },
 

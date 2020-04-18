@@ -1,0 +1,52 @@
+.container {
+  padding-bottom: 100rpx;
+
+}
+
+.scroll-post-title {
+  color: black;
+  font-family: 'Trebuchet MS',
+                 'Lucida Sans Unicode',
+                 'Lucida Grande',
+                 'Lucida Sans',
+                 Arial,
+                 sans-serif;
+  font-size: 50rpx;
+  padding-top: 30rpx;
+  font-weight: 700;
+
+}
+
+.category {
+  color: black;
+  font-family: 'Trebuchet MS',
+                 'Lucida Sans Unicode',
+                 'Lucida Grande',
+                 'Lucida Sans',
+                 Arial,
+                 sans-serif;
+  font-size: 30rpx;
+  background-color: rgb(216, 170, 185);
+  padding: 20rpx;
+  border-radius: 20rpx;
+  font-weight: 700;
+}
+
+.thumbnail {
+  width: 100%;
+  border-radius: 30rpx;
+  margin-right: 10px;
+}
+
+.column-category {
+  width: 100%;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+}
+
+.post-container {
+  background-color: rgb(216, 170, 185);
+  border-radius: 50rpx;
+  margin-bottom: 20rpx;
+  padding: 20rpx;
+}

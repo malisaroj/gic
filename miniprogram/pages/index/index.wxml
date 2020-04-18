@@ -9,19 +9,7 @@
     </view>
   </view>
 
-
-  <!-- 上传图片 -->
-  <view class="uploader">
-    <view class="uploader-text" bindtap="doUpload">
-      <text>上传图片</text>
-    </view>
-    <view class="uploader-container" wx:if="{{imgUrl}}">
-      <image class="uploader-image" src="{{imgUrl}}" mode="aspectFit" bindtap="previewImg"></image>
-    </view>
-  </view>
-
   <!--Banner -->
-
   <!--Image Carousel -->
   <view class="swiper-container">
     <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
@@ -34,6 +22,21 @@
   </view>
 
 
+  <view class="title">
+    Hot Topics
+  </view>
+  <view class="category">
+    <view class="row">
+      <view class="column category-col" >
+        <image class="category-image" data-id="{{item.categoryTitle}}"   bindtap="viewCategory" wx:for="{{topicUrls}}" src="{{item.urls}}"></image>
+      </view>
+
+    </view>
+  </view>
+
+  <view class="title">
+    Recent Blogs
+  </view>
   <!--Scroller for the recent posts -->
   <scroll-view wx:for="{{posts}}" wx:key="key">
     <view class="post-container row" data-id="{{item._id}}" bindtap="viewBlog">

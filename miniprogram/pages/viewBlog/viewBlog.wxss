@@ -1,8 +1,17 @@
-image {
-  width: 100%;
+.container {
+  padding-bottom: 100rpx;
 
 }
 
+image {
+  width: 100%;
+  border-radius: 30rpx;
+}
+
+.container {
+  background-color: rgb(216, 170, 185);
+
+}
 .blog-title {
   font-family: 'Trebuchet MS',
                  'Lucida Sans Unicode',

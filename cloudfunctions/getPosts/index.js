@@ -11,6 +11,12 @@ exports.main = async(event, context) => {
       _id: event.id
     }).get();
 
+  else if (event.categoryTitle) {
+    return await db.collection("posts").where({
+      category: event.categoryTitle
+    }).get();
+
+  }
   else
     return await db.collection("posts").where({}).get();
 }
