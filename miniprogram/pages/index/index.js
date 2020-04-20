@@ -8,6 +8,11 @@ Page({
     logged: false,
     takeSession: false,
     requestResult: '',
+    nowTemp: '',
+    nowWeather: '',
+    nowWeatherBg: '',
+    city: 'New York',
+    locationTipsText: 'Click to get the current location',
     imgUrls: [
       '../../images/topic3.png',
       '../../images/topic1.jpg',
@@ -26,6 +31,11 @@ Page({
         "text": "",
         "iconPath": "../../icons/feedback-fill.png",
         "selectedIconPath": "../../icons/feedback-fill.png",
+      },
+      {
+        "text": "",
+        "iconPath": "../../icons/news.png",
+        "selectedIconPath": "../../icons/news.png",
       }
     ],
 
@@ -52,6 +62,7 @@ Page({
     ],
 
   },
+
 
   changeIndicatorDots: function(e) {
     this.setData({
@@ -85,13 +96,63 @@ Page({
 
   viewCategory: function(event) {
     let title = event.currentTarget.dataset.id;
-    
+
     wx.navigateTo({
       url: '../viewCategory/viewCategory?id=' + title,
     })
   },
 
+  onPullDownRefresh() {
+    this.getLocation()
+  },
+
+  // request the new function to get the city name
+  onTapLocation() {
+    this.getLocation()
+  },
+
+  getLocation() {
+
+    wx.getLocation({
+      success: res => {
+        this.reverseGeocoder(res.latitude, res.longitude)
+      },
+      fail: () => {
+
+
+      }
+    })
+  },
+
+  // transform location to city name
+  reverseGeocoder(lat, lon) {
+    wx.request({
+      url: 'https://apis.map.qq.com/ws/geocoder/v1/',
+      data: {
+        location: lat + ',' + lon,
+        get_poi: '1',
+        key: 'OB4BZ-D4W3U-B7VVO-4PJWW-6TKDJ-WPB77'
+      },
+      header: {
+        'content-type': 'application/json'
+      },
+      success(res) {
+        let city = res;
+        console.log(city);
+        let temp = 9;
+        let weather = 'cloudy'
+
+      },
+      complete: () => {
+        wx.stopPullDownRefresh();
+
+      }
+    })
+  },
+
   onLoad: function() {
+    this.getLocation();
+
     if (!wx.cloud) {
       wx.redirectTo({
         url: '../chooseLib/chooseLib',
@@ -121,6 +182,26 @@ Page({
       success: (res) => {
         this.setData({
           posts: res.result.data
+        })
+      },
+      fail: console.error
+    })
+
+    wx.cloud.callFunction({
+      name: "getBanners",
+      success: (res) => {
+        this.setData({
+          banners: res.result.data
+        })
+      },
+      fail: console.error
+    })
+
+    wx.cloud.callFunction({
+      name: "getAds",
+      success: (res) => {
+        this.setData({
+          ads: res.result.data
         })
       },
       fail: console.error

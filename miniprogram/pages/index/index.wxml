@@ -5,7 +5,17 @@
   <view class="userinfo">
     <button open-type="getUserInfo" bindgetuserinfo="onGetUserInfo" class="userinfo-avatar" style="background-image: url({{avatarUrl}})" size="default"></button>
     <view class="userinfo-nickname-wrapper">
-      <button class="userinfo-nickname" bindtap="onGetOpenid">点击获取 openid</button>
+      <view class="location-wrapper" bindtap="onTapLocation">
+        <view class="location">
+          <image class="location-icon" src="../../icons/pin.png"></image>
+          <view class="location-text">{{city}}</view>
+          <view class="location-tips">{{locationTipsText}}</view>
+          <view class="temp">
+            {{nowTemp}}
+          </view>
+          <view class="weather">{{nowWeather}}</view>
+        </view>
+      </view>
     </view>
   </view>
 
@@ -13,22 +23,28 @@
   <!--Image Carousel -->
   <view class="swiper-container">
     <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-      <block wx:for="{{imgUrls}}">
+      <block wx:for="{{banners}}" wx:key="key">
         <swiper-item>
-          <image src="{{item}}" class="slide-image swipimg" width="355" height="150" />
+          <image src="{{item.imgUrl}}" class="slide-image swipimg" width="355" height="200" />
         </swiper-item>
       </block>
     </swiper>
   </view>
 
+  <!--Ads -->
+  <view class="ads-container">
+    <block wx:for="{{ads}}" wx:key="key">
+      <image src="{{item.imgUrl}}" class="ads-image"/>
+    </block>
+  </view>
 
   <view class="title">
     Hot Topics
   </view>
   <view class="category">
     <view class="row">
-      <view class="column category-col" >
-        <image class="category-image" data-id="{{item.categoryTitle}}"   bindtap="viewCategory" wx:for="{{topicUrls}}" src="{{item.urls}}"></image>
+      <view class="column category-col">
+        <image class="category-image" data-id="{{item.categoryTitle}}" bindtap="viewCategory" wx:for="{{topicUrls}}" src="{{item.urls}}"></image>
       </view>
 
     </view>

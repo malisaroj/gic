@@ -190,9 +190,9 @@ module.exports =
               wx.navigateTo({
                 url: '../index/index',
               })
-            } else
+            } else if(id === 2)
             wx.navigateTo({
-              url: '../feedback/feedback',
+              url: '../news/news',
             })
 
           },

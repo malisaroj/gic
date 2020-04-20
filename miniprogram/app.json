@@ -13,14 +13,23 @@
     "pages/openapi/cloudid/cloudid",
     "pages/im/im",
     "pages/im/room/room",
-    "pages/feedback/feedback"
+    "pages/feedback/feedback",
+    "pages/news/news"
   ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "Your location information is used to determine the display of the Mini Program location API."
+    }
+  },
   "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText": "云开发 QuickStart",
-    "navigationBarTextStyle": "black"
+    "navigationBarTitleText": "Guide in China",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true,
+    "backgroundTextStyle": "dark"
+        
   },
   "sitemapLocation": "sitemap.json",
   "style": "v2"
