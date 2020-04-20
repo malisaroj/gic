@@ -13,11 +13,6 @@ Page({
     nowWeatherBg: '',
     city: 'New York',
     locationTipsText: 'Click to get the current location',
-    imgUrls: [
-      '../../images/topic3.png',
-      '../../images/topic1.jpg',
-      '../../images/topic1.png'
-    ],
     indicatorDots: true,
     autoplay: true,
     interval: 5000,
@@ -58,6 +53,10 @@ Page({
       {
         "categoryTitle": "Health",
         "urls": "../../images/health.jpg"
+      },
+      {
+        "categoryTitle": "News",
+        "urls": "../../images/news.jpg"
       }
     ],
 

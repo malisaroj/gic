@@ -2,6 +2,7 @@
 <view class="container">
 
   <!-- 用户 openid -->
+  <!--
   <view class="userinfo">
     <button open-type="getUserInfo" bindgetuserinfo="onGetUserInfo" class="userinfo-avatar" style="background-image: url({{avatarUrl}})" size="default"></button>
     <view class="userinfo-nickname-wrapper">
@@ -18,7 +19,7 @@
       </view>
     </view>
   </view>
-
+-->
   <!--Banner -->
   <!--Image Carousel -->
   <view class="swiper-container">
@@ -34,7 +35,7 @@
   <!--Ads -->
   <view class="ads-container">
     <block wx:for="{{ads}}" wx:key="key">
-      <image src="{{item.imgUrl}}" class="ads-image"/>
+      <image src="{{item.imgUrl}}" class="ads-image" />
     </block>
   </view>
 
@@ -54,19 +55,19 @@
     Recent Blogs
   </view>
   <!--Scroller for the recent posts -->
-  <scroll-view wx:for="{{posts}}" wx:key="key">
-    <view class="post-container row" data-id="{{item._id}}" bindtap="viewBlog">
-      <view class="column column-thumbnail">
-        <image class="thumbnail" src="{{item.thumbnail}}"></image>
-      </view>
-      <view class="column column-category">
-        <text class="category">{{item.category}}</text>
-        <view class="row">
-          <text class="scroll-post-title">{{item.title}}</text>
-
+  <scroll-view>
+    <view class="recent-blogs-wrapper" wx:for="{{posts}}" wx:key="key">
+      <view class="post-container row" data-id="{{item._id}}" bindtap="viewBlog">
+        <view class="column column-thumbnail">
+          <image class="thumbnail" src="{{item.thumbnail}}"></image>
+        </view>
+        <view class="column column-category">
+          <text class="category">{{item.category}}</text>
+          <view class="row">
+            <text class="scroll-post-title">{{item.title}}</text>
+          </view>
         </view>
       </view>
-
     </view>
   </scroll-view>
 

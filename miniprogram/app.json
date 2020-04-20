@@ -18,7 +18,7 @@
   ],
   "permission": {
     "scope.userLocation": {
-      "desc": "Your location information is used to determine the display of the Mini Program location API."
+      "desc": "location information used."
     }
   },
   "window": {

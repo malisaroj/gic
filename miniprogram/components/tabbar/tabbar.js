@@ -190,11 +190,11 @@ module.exports =
               wx.navigateTo({
                 url: '../index/index',
               })
-            } else if(id === 2)
-            wx.navigateTo({
-              url: '../news/news',
-            })
-
+            } else if(id === 2) {
+              wx.navigateTo({
+                url: '../news/news',
+              })
+            }
           },
         }
       });

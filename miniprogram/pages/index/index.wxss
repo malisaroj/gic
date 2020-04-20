@@ -278,3 +278,6 @@ swiper {
   height: 350rpx;
   border-radius: 30rpx;
 }
+scroll-view {
+  height: 700rpx;
+}
