@@ -2,7 +2,6 @@
 <view class="container">
 
   <!-- 用户 openid -->
-  <!--
   <view class="userinfo">
     <button open-type="getUserInfo" bindgetuserinfo="onGetUserInfo" class="userinfo-avatar" style="background-image: url({{avatarUrl}})" size="default"></button>
     <view class="userinfo-nickname-wrapper">
@@ -19,14 +18,14 @@
       </view>
     </view>
   </view>
--->
+
   <!--Banner -->
   <!--Image Carousel -->
   <view class="swiper-container">
     <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
       <block wx:for="{{banners}}" wx:key="key">
         <swiper-item>
-          <image src="{{item.imgUrl}}" class="slide-image swipimg" width="355" height="200" />
+          <image mode="aspectFill" src="{{item.imgUrl}}" class="slide-image swipimg" width="355" height="200" />
         </swiper-item>
       </block>
     </swiper>
@@ -35,7 +34,7 @@
   <!--Ads -->
   <view class="ads-container">
     <block wx:for="{{ads}}" wx:key="key">
-      <image src="{{item.imgUrl}}" class="ads-image" />
+      <image mode="aspectFit" src="{{item.imgUrl}}" class="ads-image" bindtap="goToPage"/>
     </block>
   </view>
 
@@ -45,7 +44,7 @@
   <view class="category">
     <view class="row">
       <view class="column category-col">
-        <image class="category-image" data-id="{{item.categoryTitle}}" bindtap="viewCategory" wx:for="{{topicUrls}}" src="{{item.urls}}"></image>
+        <image class="category-image" data-id="{{item.categoryTitle}}" bindtap="viewCategory" wx:for="{{topicUrls}}" wx:key="key" src="{{item.urls}}"></image>
       </view>
 
     </view>
@@ -55,11 +54,11 @@
     Recent Blogs
   </view>
   <!--Scroller for the recent posts -->
-  <scroll-view>
+  <scroll-view scroll-y>
     <view class="recent-blogs-wrapper" wx:for="{{posts}}" wx:key="key">
       <view class="post-container row" data-id="{{item._id}}" bindtap="viewBlog">
         <view class="column column-thumbnail">
-          <image class="thumbnail" src="{{item.thumbnail}}"></image>
+          <image class="thumbnail" mode="aspectFill" src="{{item.thumbnail}}"></image>
         </view>
         <view class="column column-category">
           <text class="category">{{item.category}}</text>

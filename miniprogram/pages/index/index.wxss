@@ -196,8 +196,8 @@ page {
 }
 
 .thumbnail {
-  height: 150rpx;
-  width: 150rpx;
+  height: 250rpx;
+  width: 250rpx;
   border-radius: 10rpx;
   margin-right: 10px;
 }
@@ -241,7 +241,6 @@ page {
   right: 0rpx;
   width: 90%;
   height: 100%;
-  background: white;
   margin: 40rpx 0;
 }
 
@@ -268,7 +267,6 @@ swiper {
   font-weight: 700;
 }
 
-
 .location-icon {
   width: 32rpx;
   height: 32rpx;
@@ -278,6 +276,7 @@ swiper {
   height: 350rpx;
   border-radius: 30rpx;
 }
+
 scroll-view {
   height: 700rpx;
 }

@@ -20,6 +20,21 @@
       </view>
     </view>
   </view>
+  <view class="comment-wrapper">
+    <view class="title">Comment</view>
+    <view class="comment-content">
+      <view class="comment" wx:key="key" wx:for="{{comment}}">
+        <view>{{item.content}}</view>
+
+      </view>
+    </view>
+    <view class="comment-form">
+      <form>
+        <textarea maxlength="-1" bindinput="textareaInput" placeholder='Write Comment'></textarea>
+      </form>
+      <button bindtap="writecommentBt">Send Comment</button>
+    </view>
+  </view>
   <view class="page">
     <mp-tabbar style="position:fixed;bottom:0;width:100%;left:0;right:0;" list="{{list}}" bindchange="tabChange"></mp-tabbar>
   </view>

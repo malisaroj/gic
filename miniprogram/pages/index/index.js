@@ -101,6 +101,10 @@ Page({
     })
   },
 
+  goToPage:function(){
+    
+  },
+
   onPullDownRefresh() {
     this.getLocation()
   },
