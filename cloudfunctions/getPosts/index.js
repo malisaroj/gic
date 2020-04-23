@@ -12,11 +12,11 @@ exports.main = async(event, context) => {
     }).get();
 
   else if (event.categoryTitle) {
-    return await db.collection("posts").where({
+    return await db.collection("posts").orderBy('createdDate', 'desc').where({
       category: event.categoryTitle
     }).get();
 
   }
   else
-    return await db.collection("posts").where({}).get();
+    return await db.collection("posts").orderBy('createdDate', 'desc').where({}).get();
 }

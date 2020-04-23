@@ -11,6 +11,10 @@ page {
   justify-content: flex-start;
 }
 
+video {
+  width: 100%;
+}
+
 .userinfo, .uploader, .tunnel {
   margin-top: 40rpx;
   height: 140rpx;
@@ -62,6 +66,16 @@ page {
 
 .userinfo-nickname-wrapper {
   flex: 1;
+  margin-left: 20px;
+  color: black;
+  font-family: 'Trebuchet MS',
+                 'Lucida Sans Unicode',
+                 'Lucida Grande',
+                 'Lucida Sans',
+                 Arial,
+                 sans-serif;
+  font-size: 30rpx;
+  font-weight: 700;
 }
 
 .uploader, .tunnel {
@@ -235,6 +249,7 @@ page {
 }
 
 /* Image Carousel */
+
 .swiper-container {
   position: relative;
   left: 0rpx;
@@ -252,6 +267,10 @@ swiper {
   width: 100%;
   height: 100%;
   border-radius: 30rpx;
+}
+
+.ads-container {
+  width: 90%;
 }
 
 .title {
@@ -275,6 +294,7 @@ swiper {
 .ads-image {
   height: 350rpx;
   border-radius: 30rpx;
+  width: 100%;
 }
 
 scroll-view {

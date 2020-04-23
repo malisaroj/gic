@@ -7,6 +7,11 @@
       <view class="meta-data">Last updated:</view>
       <view>{{item.lastUpdated}}</view>
     </view>
+    <view class="ads-container">
+      <block class="ad">
+        <ad unit-id="adunit-1cd3a8648d9c2271"> </ ad>
+      </block>
+    </view>
     <view class="subheading-wrapper">
       <view class="subheading">Coronavirus Cases:</view>
       <view class="data">{{item.numberOfCases}}</view>

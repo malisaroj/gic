@@ -75,3 +75,7 @@ image {
   text-justify: inter-word;
   padding: 20rpx;
 }
+
+.ads-container {
+  width: 90%;
+}

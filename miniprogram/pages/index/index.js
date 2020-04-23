@@ -5,14 +5,10 @@ Page({
   data: {
     avatarUrl: './user-unlogin.png',
     userInfo: {},
+    message:'',
     logged: false,
     takeSession: false,
     requestResult: '',
-    nowTemp: '',
-    nowWeather: '',
-    nowWeatherBg: '',
-    city: 'New York',
-    locationTipsText: 'Click to get the current location',
     indicatorDots: true,
     autoplay: true,
     interval: 5000,
@@ -101,17 +97,15 @@ Page({
     })
   },
 
-  goToPage:function(){
-    
+  goToPage: function() {
+
   },
 
   onPullDownRefresh() {
-    this.getLocation()
   },
 
   // request the new function to get the city name
   onTapLocation() {
-    this.getLocation()
   },
 
   getLocation() {
@@ -120,10 +114,7 @@ Page({
       success: res => {
         this.reverseGeocoder(res.latitude, res.longitude)
       },
-      fail: () => {
-
-
-      }
+      fail: () => {}
     })
   },
 
@@ -134,17 +125,17 @@ Page({
       data: {
         location: lat + ',' + lon,
         get_poi: '1',
-        key: 'OB4BZ-D4W3U-B7VVO-4PJWW-6TKDJ-WPB77'
+        key: 'OAEBZ-7KSRK-FQVJU-ABW74-MTHIS-AUFGI'
       },
       header: {
         'content-type': 'application/json'
       },
-      success(res) {
-        let city = res;
-        console.log(city);
-        let temp = 9;
-        let weather = 'cloudy'
+      success: res => {
+        this.setData({
+          city: res.data.result.address_component.ad_level_2
 
+        })
+        console.log(res.data)
       },
       complete: () => {
         wx.stopPullDownRefresh();
@@ -153,8 +144,9 @@ Page({
     })
   },
 
+
+
   onLoad: function() {
-    this.getLocation();
 
     if (!wx.cloud) {
       wx.redirectTo({

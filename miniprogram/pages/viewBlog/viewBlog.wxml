@@ -35,6 +35,11 @@
       <button bindtap="writecommentBt">Send Comment</button>
     </view>
   </view>
+  <view class="ads-container">
+    <block class="ad">
+      <ad unit-id="adunit-1cd3a8648d9c2271"> </ ad>
+    </block>
+  </view>
   <view class="page">
     <mp-tabbar style="position:fixed;bottom:0;width:100%;left:0;right:0;" list="{{list}}" bindchange="tabChange"></mp-tabbar>
   </view>
