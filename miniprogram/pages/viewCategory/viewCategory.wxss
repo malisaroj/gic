@@ -1,6 +1,9 @@
 .container {
   padding-bottom: 100rpx;
+}
 
+scroll-view {
+  padding-bottom: 20px;
 }
 
 .scroll-post-title {
@@ -14,7 +17,6 @@
   font-size: 50rpx;
   padding-top: 30rpx;
   font-weight: 700;
-
 }
 
 .category {
@@ -45,7 +47,7 @@
 }
 
 .post-container {
-  background-color: rgb(216, 170, 185);
+  background-color: white;
   border-radius: 50rpx;
   margin-bottom: 20rpx;
   padding: 20rpx;
@@ -53,4 +55,8 @@
 
 .ads-container {
   width: 90%;
+}
+
+.row {
+  padding-top: 30rpx;
 }

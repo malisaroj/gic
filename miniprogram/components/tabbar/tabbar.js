@@ -196,7 +196,7 @@ module.exports =
             
             else if(id === 2) {
               wx.navigateTo({
-                url: '../news/news',
+                url: '../viewCategory/viewCategory?id=' + 'News',
               })
             }
           },
