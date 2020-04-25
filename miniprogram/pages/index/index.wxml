@@ -11,17 +11,27 @@
     </view>
   </view>
 
-  <!--Banner -->
-  <!--Image Carousel -->
-  <view class="swiper-container">
-    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-      <block wx:for="{{banners}}" wx:key="key">
-        <swiper-item>
-          <image mode="aspectFill" src="{{item.imgUrl}}" class="slide-image swipimg" width="355" height="200" />
-        </swiper-item>
-      </block>
-    </swiper>
+  
+  <view class="title">
+    Latest Articles
   </view>
+  <!--Scroller for the recent posts -->
+  <scroll-view scroll-y>
+    <view class="recent-blogs-wrapper" wx:for="{{posts}}" wx:key="key">
+      <view class="post-container row" data-id="{{item._id}}" bindtap="viewBlog">
+        <view class="column column-thumbnail">
+          <image class="thumbnail" mode="aspectFill" src="{{item.thumbnail}}"></image>
+        </view>
+        <view class="column column-category">
+          <text class="category">{{item.category}}</text>
+          <view class="row">
+            <text class="scroll-post-title">{{item.title}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+
 
   <view class="ads-container">
     <block class="ad">
@@ -50,29 +60,20 @@
   </view>
 
   <view class="ads-container">
-    <video unit-id="adunit-e85080589de87857" autoplay='true' loop='true'> </ video>
+    <video unit-id="adunit-e85080589de87857" autoplay='false' loop='true'> </ video>
   </view>
 
-  <view class="title">
-    Recent Blogs
+  <!--Banner -->
+  <!--Image Carousel -->
+  <view class="swiper-container">
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{banners}}" wx:key="key">
+        <swiper-item>
+          <image mode="aspectFill" src="{{item.imgUrl}}" class="slide-image swipimg" width="355" height="200" />
+        </swiper-item>
+      </block>
+    </swiper>
   </view>
-  <!--Scroller for the recent posts -->
-  <scroll-view scroll-y>
-    <view class="recent-blogs-wrapper" wx:for="{{posts}}" wx:key="key">
-      <view class="post-container row" data-id="{{item._id}}" bindtap="viewBlog">
-        <view class="column column-thumbnail">
-          <image class="thumbnail" mode="aspectFill" src="{{item.thumbnail}}"></image>
-        </view>
-        <view class="column column-category">
-          <text class="category">{{item.category}}</text>
-          <view class="row">
-            <text class="scroll-post-title">{{item.title}}</text>
-          </view>
-        </view>
-      </view>
-    </view>
-  </scroll-view>
-
 
   <view class="page">
     <mp-tabbar style="position:fixed;bottom:0;width:100%;left:0;right:0;" list="{{list}}" bindchange="tabChange"></mp-tabbar>
