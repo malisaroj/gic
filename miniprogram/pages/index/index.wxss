@@ -248,6 +248,21 @@ video {
   padding-top: 30rpx;
 }
 
+.banner-text {
+  color: black;
+  font-family: 'Trebuchet MS',
+                 'Lucida Sans Unicode',
+                 'Lucida Grande',
+                 'Lucida Sans',
+                 Arial,
+                 sans-serif;
+  font-size: 30rpx;
+  font-weight: 700;
+  padding-top: 20rpx;
+  padding-left: 20rpx;
+}
+
+
 /* Image Carousel */
 
 .swiper-container {
@@ -260,13 +275,12 @@ video {
 }
 
 swiper {
-  height: 400rpx;
+  height: 500rpx;
 }
 
 .swipimg {
   width: 100%;
-  height: 100%;
-  border-radius: 30rpx;
+  height: 80%;
 }
 
 .ads-container {

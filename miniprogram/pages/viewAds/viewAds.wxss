@@ -1,0 +1,55 @@
+.title {
+  color: black;
+  font-family: 'Trebuchet MS',
+                 'Lucida Sans Unicode',
+                 'Lucida Grande',
+                 'Lucida Sans',
+                 Arial,
+                 sans-serif;
+  font-size: 45rpx;
+  padding-top: 30rpx;
+  font-weight: 700;
+  width: 90%;
+}
+
+.content {
+  color: black;
+  font-family: 'Trebuchet MS',
+                 'Lucida Sans Unicode',
+                 'Lucida Grande',
+                 'Lucida Sans',
+                 Arial,
+                 sans-serif;
+  font-size: 30rpx;
+  padding-top: 30rpx;
+  width: 90%;
+  text-align: justify;
+  text-justify: inter-word;
+  line-height: 1.5;
+}
+
+.image {
+  width: 100%;
+}
+
+.container {
+  padding-bottom: 100rpx;
+}
+
+.icon {
+  height: 32rpx;
+  width: 32rpx;
+}
+
+.meta-container {
+  align-self: flex-start;
+}
+
+button:not([size='mini']) {
+  width: 40rpx;
+
+}
+.ads-container {
+  margin-top: 20rpx;
+  width: 90%;
+}

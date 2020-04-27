@@ -10,8 +10,8 @@ Page({
 
       {
         "text": "",
-        "iconPath": "../../icons/feedback-fill.png",
-        "selectedIconPath": "../../icons/feedback-fill.png",
+        "iconPath": "../../icons/covid-19.png",
+        "selectedIconPath": "../../icons/covid-19.png",
       },
       {
         "text": "",

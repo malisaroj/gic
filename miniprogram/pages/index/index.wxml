@@ -11,7 +11,20 @@
     </view>
   </view>
 
-  
+  <!--Banner -->
+  <!--Image Carousel -->
+  <view class="swiper-container">
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{banners}}" wx:key="key">
+        <swiper-item data-id="{{item._id}}" bindtap="viewNews">
+
+          <image mode="aspectFill" src="{{item.imgUrl}}" class="slide-image swipimg" width="355" height="200" />
+          <view class="banner-text">{{item.title}}</view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
   <view class="title">
     Latest Articles
   </view>
@@ -53,29 +66,18 @@
 
   <!--Ads -->
   <view class="ads-container">
-    <ad unit-id="adunit-65aa8263c3cd45c6" ad-type="grid" grid-opacity="0.8" grid-count="5" ad-theme="white"> </ ad>
       <block wx:for="{{ads}}" wx:key="key">
-        <image mode="aspectFit" src="{{item.imgUrl}}" class="ads-image" bindtap="goToWebView" />
+        <image mode="aspectFit" src="{{item.imgUrl}}" class="ads-image" data-id="{{item._id}}" bindtap="viewAds" />
       </block>
   </view>
 
   <view class="ads-container">
-    <video unit-id="adunit-e85080589de87857" autoplay='false' loop='true'> </ video>
+    <video unit-id="adunit-e85080589de87857" autoplay='false' loop='false'> </ video>
   </view>
 
-  <!--Banner -->
-  <!--Image Carousel -->
-  <view class="swiper-container">
-    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-      <block wx:for="{{banners}}" wx:key="key">
-        <swiper-item>
-          <image mode="aspectFill" src="{{item.imgUrl}}" class="slide-image swipimg" width="355" height="200" />
-        </swiper-item>
-      </block>
-    </swiper>
-  </view>
 
   <view class="page">
     <mp-tabbar style="position:fixed;bottom:0;width:100%;left:0;right:0;" list="{{list}}" bindchange="tabChange"></mp-tabbar>
   </view>
 </view>
+
