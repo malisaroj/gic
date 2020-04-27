@@ -183,18 +183,18 @@ module.exports =
           }
         },
         methods: {
-          tabChange: function (event) {
+          tabChange: function(event) {
             let id = event.currentTarget.dataset.index;
             console.log(id)
             if (id === 0) {
               wx.navigateTo({
                 url: '../index/index',
               })
-            } else if(id === 1) {
-              
-            } 
-            
-            else if(id === 2) {
+            } else if (id === 1) {
+              wx.navigateTo({
+                url: '../news/news',
+              })
+            } else if (id === 2) {
               wx.navigateTo({
                 url: '../viewCategory/viewCategory?id=' + 'News',
               })

@@ -9,9 +9,9 @@ Page({
     logged: false,
     takeSession: false,
     requestResult: '',
-    indicatorDots: true,
+    indicatorDots: false,
     autoplay: true,
-    interval: 5000,
+    interval: 11000,
     duration: 1000,
     list: [{
         "text": "",
@@ -20,8 +20,8 @@ Page({
       },
       {
         "text": "",
-        "iconPath": "../../icons/feedback-fill.png",
-        "selectedIconPath": "../../icons/feedback-fill.png",
+        "iconPath": "../../icons/covid-19.png",
+        "selectedIconPath": "../../icons/covid-19.png",
       },
       {
         "text": "",
@@ -94,6 +94,24 @@ Page({
 
     wx.navigateTo({
       url: '../viewCategory/viewCategory?id=' + title,
+    })
+  },
+
+
+  viewNews: function (event) {
+    let id = event.currentTarget.dataset.id;
+
+    wx.navigateTo({
+      url: '../viewNews/viewNews?id=' + id,
+    })
+  },
+
+
+  viewAds: function (event) {
+    let id = event.currentTarget.dataset.id;
+
+    wx.navigateTo({
+      url: '../viewAds/viewAds?id=' + id,
     })
   },
 
