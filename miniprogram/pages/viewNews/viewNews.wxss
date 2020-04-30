@@ -37,8 +37,8 @@
 }
 
 .icon {
-  height: 32rpx;
-  width: 32rpx;
+  height: 110rpx;
+  width: 100rpx;
 }
 
 .meta-container {
@@ -46,9 +46,9 @@
 }
 
 button:not([size='mini']) {
-  width: 40rpx;
-
+  width: 150rpx;
 }
+
 .ads-container {
   margin-top: 20rpx;
   width: 90%;

@@ -4,7 +4,7 @@
     <view class="title">{{item.title}}</view>
     <view class="meta-container">
       <button class="item" open-type="share">
-        <image class="icon" mode="aspectFill" src="../../icons/share.png"></image>
+        <image class="icon" mode="aspectFill" src="../../icons/wechat.jpg"></image>
       </button>
     </view>
 
