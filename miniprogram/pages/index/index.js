@@ -5,7 +5,7 @@ Page({
   data: {
     avatarUrl: './user-unlogin.png',
     userInfo: {},
-    message:'',
+    message: '',
     logged: false,
     takeSession: false,
     requestResult: '',
@@ -59,6 +59,7 @@ Page({
   },
 
 
+
   changeIndicatorDots: function(e) {
     this.setData({
       indicatorDots: !this.data.indicatorDots
@@ -98,7 +99,7 @@ Page({
   },
 
 
-  viewNews: function (event) {
+  viewNews: function(event) {
     let id = event.currentTarget.dataset.id;
 
     wx.navigateTo({
@@ -107,7 +108,7 @@ Page({
   },
 
 
-  viewAds: function (event) {
+  viewAds: function(event) {
     let id = event.currentTarget.dataset.id;
 
     wx.navigateTo({
@@ -119,12 +120,10 @@ Page({
 
   },
 
-  onPullDownRefresh() {
-  },
+  onPullDownRefresh() {},
 
   // request the new function to get the city name
-  onTapLocation() {
-  },
+  onTapLocation() {},
 
   getLocation() {
 
@@ -162,9 +161,35 @@ Page({
     })
   },
 
-
-
   onLoad: function() {
+    // 在页面中定义激励视频广告
+    let videoAd = null
+    // 在页面onLoad回调事件中创建激励视频广告实例
+    if (wx.createRewardedVideoAd) {
+      videoAd = wx.createRewardedVideoAd({
+        adUnitId: 'adunit-9116c0ec2e664d5b'
+      })
+      videoAd.onLoad(() => {
+
+      })
+      videoAd.onError((err) => {
+
+      })
+      videoAd.onClose((res) => {
+      })
+    }
+
+    // 用户触发广告后，显示激励视频广告
+    if (videoAd) {
+      videoAd.show().catch(() => {
+        // 失败重试
+        videoAd.load()
+          .then(() => videoAd.show())
+          .catch(err => {
+            console.log('Incentive video ad display failed')
+          })
+      })
+    }
 
     if (!wx.cloud) {
       wx.redirectTo({
@@ -301,5 +326,7 @@ Page({
       }
     })
   },
+
+
 
 })
