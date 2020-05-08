@@ -15,12 +15,6 @@ Page({
         "iconPath": "../../icons/home-2-fill.png",
         "selectedIconPath": "../../icons/home-2-fill.png",
       },
-
-      {
-        "text": "",
-        "iconPath": "../../icons/feedback-fill.png",
-        "selectedIconPath": "../../icons/feedback-fill.png",
-      },
       {
         "text": "",
         "iconPath": "../../icons/news.png",
