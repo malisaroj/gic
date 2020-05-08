@@ -20,11 +20,6 @@ Page({
       },
       {
         "text": "",
-        "iconPath": "../../icons/covid-19.png",
-        "selectedIconPath": "../../icons/covid-19.png",
-      },
-      {
-        "text": "",
         "iconPath": "../../icons/news.png",
         "selectedIconPath": "../../icons/news.png",
       }
@@ -47,8 +42,8 @@ Page({
         "urls": "../../images/relationship.jpg"
       },
       {
-        "categoryTitle": "Health",
-        "urls": "../../images/health.jpg"
+        "categoryTitle": "Learn Chinese",
+        "urls": "../../images/learnChinese.jpg"
       },
       {
         "categoryTitle": "News",
@@ -162,21 +157,24 @@ Page({
   },
 
   onLoad: function() {
+/*
     // 在页面中定义激励视频广告
     let videoAd = null
+
     // 在页面onLoad回调事件中创建激励视频广告实例
     if (wx.createRewardedVideoAd) {
       videoAd = wx.createRewardedVideoAd({
         adUnitId: 'adunit-9116c0ec2e664d5b'
       })
-      videoAd.onLoad(() => {
-
-      })
-      videoAd.onError((err) => {
-
-      })
-      videoAd.onClose((res) => {
-      })
+      videoAd.onLoad(() => {})
+      videoAd.onError((err) => {})
+      videoAd.onClose((res) => {   
+        // The user has clicked the **Close Ad** button
+        if (res && res.isEnded) {
+          // After the normal playback ends, game reward can be issued
+        } else {
+          // Exit before playback ends, no game reward is issued.
+        }})
     }
 
     // 用户触发广告后，显示激励视频广告
@@ -186,11 +184,12 @@ Page({
         videoAd.load()
           .then(() => videoAd.show())
           .catch(err => {
-            console.log('Incentive video ad display failed')
+            console.log('激励视频 广告显示失败')
           })
       })
     }
 
+    */
     if (!wx.cloud) {
       wx.redirectTo({
         url: '../chooseLib/chooseLib',

@@ -12,8 +12,7 @@
     "pages/openapi/callback/callback",
     "pages/openapi/cloudid/cloudid",
     "pages/im/im",
-    "pages/im/room/room",
-    "pages/news/news"
+    "pages/im/room/room"
   ],
   "permission": {
   },
