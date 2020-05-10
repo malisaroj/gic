@@ -39,6 +39,26 @@ Page({
 
     })
 
+    // Define interstitial ads on the page
+    let interstitialAd = null
+
+    // Create an interstitial ad instance in the page onLoad callback event
+    if (wx.createInterstitialAd) {
+      interstitialAd = wx.createInterstitialAd({
+        adUnitId: 'adunit-35c9b50593e5bfac'
+      })
+      interstitialAd.onLoad(() => { })
+      interstitialAd.onError((err) => { })
+      interstitialAd.onClose(() => { })
+    }
+
+    // Display interstitial ads in suitable scenes
+    if (interstitialAd) {
+      interstitialAd.show().catch((err) => {
+        console.error(err)
+      })
+    }
+
 
   },
 
