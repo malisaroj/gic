@@ -1,0 +1,3 @@
+<block wx:key="key" wx:for="{{post}}">
+  <web-view src="{{item.redirectUrl}}"></web-view>
+</block>

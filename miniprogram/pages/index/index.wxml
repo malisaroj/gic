@@ -16,7 +16,7 @@
   <view class="swiper-container">
     <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
       <block wx:for="{{banners}}" wx:key="key">
-        <swiper-item data-id="{{item._id}}" bindtap="viewNews">
+        <swiper-item data-id="{{item._id}}" bindtap="viewBanners">
 
           <image mode="aspectFill" src="{{item.imgUrl}}" class="slide-image swipimg" width="355" height="200" />
           <view class="banner-text">{{item.title}}</view>
@@ -30,7 +30,7 @@
   </view>
   <!--Scroller for the recent posts -->
   <scroll-view scroll-y>
-    <view class="recent-blogs-wrapper" wx:for="{{posts}}" wx:key="key">
+    <view class="recent-blogs-wrapper" wx:for="{{blogs}}" wx:key="key">
       <view class="post-container row" data-id="{{item._id}}" bindtap="viewBlog">
         <view class="column column-thumbnail">
           <image class="thumbnail" mode="aspectFill" src="{{item.thumbnail}}"></image>
@@ -64,15 +64,27 @@
     </view>
   </view>
 
-  <!--Ads -->
-  <view class="ads-container">
+  <!--Image Carousel -->
+  <view class="swiper-container">
+    <swiper indicator-dots="true">
+      <block wx:for="{{posts}}" wx:key="key">
+        <swiper-item data-id="{{item._id}}" bindtap="viewPosts">
+          <view class="banner-text">{{item.title}}</view>
+          <image mode="aspectFill" src="{{item.thumbnail}}" class="slide-image swipimg" width="355" height="200" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <ad unit-id="adunit-fa3823d880062f9a" ad-type="grid" grid-opacity="0.8" grid-count="5" ad-theme="white"> </ ad>
+
+    <!--Ads -->
+    <view class="ads-container">
       <block wx:for="{{ads}}" wx:key="key">
         <image mode="aspectFit" src="{{item.imgUrl}}" class="ads-image" data-id="{{item._id}}" bindtap="viewAds" />
       </block>
-  </view>
+    </view>
 
-  <view class="page">
-    <mp-tabbar style="position:fixed;bottom:0;width:100%;left:0;right:0;" list="{{list}}" bindchange="tabChange"></mp-tabbar>
-  </view>
+    <view class="page">
+      <mp-tabbar style="position:fixed;bottom:0;width:100%;left:0;right:0;" list="{{list}}" bindchange="tabChange"></mp-tabbar>
+    </view>
 </view>
-

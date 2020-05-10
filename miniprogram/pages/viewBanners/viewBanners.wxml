@@ -7,11 +7,16 @@
         <image class="icon" mode="aspectFill" src="../../icons/wechat.jpg"></image>
       </button>
     </view>
+    <ad unit-id="adunit-65aa8263c3cd45c6" ad-type="grid" grid-opacity="0.8" grid-count="5" ad-theme="white"> </ ad>
 
-    <view class="content" wx:key="key" wx:for="{{item.content}}">
-      {{item}}
-    </view>
-    <view class="content">Source: {{item.source}}</view>
+      <view class="content" wx:key="key" wx:for="{{item.content}}">
+        {{item.para}}
+        <view wx:if="{{item.pic}}">
+          <image class="image" src="{{item.pic}}"></image>
+
+        </view>
+      </view>
+      <view class="content">Source: {{item.source}}</view>
 
   </block>
   <view class="ads-container">

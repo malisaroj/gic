@@ -94,11 +94,11 @@ Page({
   },
 
 
-  viewNews: function(event) {
+  viewBanners: function(event) {
     let id = event.currentTarget.dataset.id;
 
     wx.navigateTo({
-      url: '../viewNews/viewNews?id=' + id,
+      url: '../viewBanners/viewBanners?id=' + id,
     })
   },
 
@@ -108,6 +108,14 @@ Page({
 
     wx.navigateTo({
       url: '../viewAds/viewAds?id=' + id,
+    })
+  },
+
+  viewPosts: function (event) {
+    let id = event.currentTarget.dataset.id;
+
+    wx.navigateTo({
+      url: '../viewPosts/viewPosts?id=' + id,
     })
   },
 
@@ -239,6 +247,16 @@ Page({
       success: (res) => {
         this.setData({
           ads: res.result.data
+        })
+      },
+      fail: console.error
+    })
+
+    wx.cloud.callFunction({
+      name: "getBlogs",
+      success: (res) => {
+        this.setData({
+          blogs: res.result.data
         })
       },
       fail: console.error
