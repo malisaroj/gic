@@ -10,19 +10,19 @@ Page({
     blogid: '',
     textareaInput: '',
     list: [{
-      "text": "",
-      "iconPath": "../../icons/home-2-fill.png",
-      "selectedIconPath": "../../icons/home-2-fill.png",
-    },
-    {
-      "text": "",
-      "iconPath": "../../icons/news.png",
-      "selectedIconPath": "../../icons/news.png",
-    }
+        "text": "",
+        "iconPath": "../../icons/home-2-fill.png",
+        "selectedIconPath": "../../icons/home-2-fill.png",
+      },
+      {
+        "text": "",
+        "iconPath": "../../icons/news.png",
+        "selectedIconPath": "../../icons/news.png",
+      }
     ],
   },
 
-  onLoad: function (options) {
+  onLoad: function(options) {
     wx.cloud.callFunction({
       name: "getBanners",
       data: {
@@ -30,15 +30,33 @@ Page({
       },
       success: (res) => {
         this.setData({
-          post: res.result.data,
-        }),
+            post: res.result.data,
+          }),
           console.log(res)
 
       },
       fail: console.error
 
     })
+    // Define interstitial ads on the page
+    let interstitialAd = null
 
+    // Create an interstitial ad instance in the page onLoad callback event
+    if (wx.createInterstitialAd) {
+      interstitialAd = wx.createInterstitialAd({
+        adUnitId: 'adunit-a1f2b50bb39f7688'
+      })
+      interstitialAd.onLoad(() => {})
+      interstitialAd.onError((err) => {})
+      interstitialAd.onClose(() => {})
+    }
+
+    // Display interstitial ads in suitable scenes
+    if (interstitialAd) {
+      interstitialAd.show().catch((err) => {
+        console.error(err)
+      })
+    }
 
   },
 
