@@ -1,5 +1,5 @@
 <view class="container">
-  <!--Scroller for the recent posts -->
+  <!--View for the recent posts -->
   <view wx:for="{{posts}}" wx:key="key">
     <view class="post-container row" data-id="{{item._id}}" bindtap="viewBlog">
       <view class="column column-thumbnail">
