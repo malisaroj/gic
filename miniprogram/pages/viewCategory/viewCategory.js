@@ -33,7 +33,8 @@ Page({
       },
       success: (res) => {
         this.setData({
-            post: res.result.data,
+          blogs: res.result.blogs.data,
+          posts: res.result.posts.data
           }),
           console.log(res)
 
