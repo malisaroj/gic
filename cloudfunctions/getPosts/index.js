@@ -11,10 +11,17 @@ exports.main = async(event, context) => {
       _id: event.id
     }).get();
 
-  else if (event.categoryTitle) {
-    return await db.collection("posts").orderBy('createdDate', 'desc').where({
+ else if (event.categoryTitle) {
+    const posts =  await db.collection("blogs").orderBy('createdDate', 'desc').where({
+      category: event.categoryTitle
+    }).get(); 
+    const blogs = await db.collection("posts").orderBy('createdDate', 'desc').where({
       category: event.categoryTitle
     }).get();
+    return {
+      posts,
+      blogs
+    }
 
   }
   else
