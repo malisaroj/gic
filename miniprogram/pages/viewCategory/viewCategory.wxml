@@ -1,6 +1,20 @@
 <view class="container">
   <!--Scroller for the recent posts -->
-  <scroll-view wx:for="{{post}}" wx:key="key">
+  <scroll-view wx:for="{{posts}}" wx:key="key">
+    <view class="post-container row" data-id="{{item._id}}" bindtap="viewBlog">
+      <view class="column column-thumbnail">
+        <image class="thumbnail" src="{{item.thumbnail}}"></image>
+      </view>
+      <view class="column column-category">
+        <text class="category">{{item.category}}</text>
+        <view class="row">
+          <text class="scroll-post-title">{{item.title}}</text>
+        </view>
+        <text class="scroll-post-content">{{item.excerpt}} Read More...</text>
+      </view>
+    </view>
+  </scroll-view>
+    <scroll-view wx:for="{{blogs}}" wx:key="key">
     <view class="post-container row" data-id="{{item._id}}" bindtap="viewBlog">
       <view class="column column-thumbnail">
         <image class="thumbnail" src="{{item.thumbnail}}"></image>
