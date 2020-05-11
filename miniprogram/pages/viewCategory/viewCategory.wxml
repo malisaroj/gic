@@ -1,6 +1,6 @@
 <view class="container">
   <!--Scroller for the recent posts -->
-  <scroll-view wx:for="{{posts}}" wx:key="key">
+  <view wx:for="{{posts}}" wx:key="key">
     <view class="post-container row" data-id="{{item._id}}" bindtap="viewBlog">
       <view class="column column-thumbnail">
         <image class="thumbnail" src="{{item.thumbnail}}"></image>
@@ -13,8 +13,8 @@
         <text class="scroll-post-content">{{item.excerpt}} Read More...</text>
       </view>
     </view>
-  </scroll-view>
-    <scroll-view wx:for="{{blogs}}" wx:key="key">
+  </view>
+    <view wx:for="{{blogs}}" wx:key="key">
     <view class="post-container row" data-id="{{item._id}}" bindtap="viewBlog">
       <view class="column column-thumbnail">
         <image class="thumbnail" src="{{item.thumbnail}}"></image>
@@ -27,7 +27,7 @@
         <text class="scroll-post-content">{{item.excerpt}} Read More...</text>
       </view>
     </view>
-  </scroll-view>
+  </view>
   <view class="ads-container">
     <block class="ad">
       <ad unit-id="adunit-1cd3a8648d9c2271"> </ ad>
