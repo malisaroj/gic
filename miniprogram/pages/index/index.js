@@ -111,7 +111,7 @@ Page({
     })
   },
 
-  viewPosts: function (event) {
+  viewPosts: function(event) {
     let id = event.currentTarget.dataset.id;
 
     wx.navigateTo({
@@ -165,39 +165,58 @@ Page({
   },
 
   onLoad: function() {
-/*
-    // 在页面中定义激励视频广告
-    let videoAd = null
+    // Define interstitial ads on the page
+    let interstitialAd = null
 
-    // 在页面onLoad回调事件中创建激励视频广告实例
-    if (wx.createRewardedVideoAd) {
-      videoAd = wx.createRewardedVideoAd({
-        adUnitId: 'adunit-9116c0ec2e664d5b'
+    // Create an interstitial ad instance in the page onLoad callback event
+    if (wx.createInterstitialAd) {
+      interstitialAd = wx.createInterstitialAd({
+        adUnitId: 'adunit-35c9b50593e5bfac'
       })
-      videoAd.onLoad(() => {})
-      videoAd.onError((err) => {})
-      videoAd.onClose((res) => {   
-        // The user has clicked the **Close Ad** button
-        if (res && res.isEnded) {
-          // After the normal playback ends, game reward can be issued
-        } else {
-          // Exit before playback ends, no game reward is issued.
-        }})
+      interstitialAd.onLoad(() => {})
+      interstitialAd.onError((err) => {})
+      interstitialAd.onClose(() => {})
     }
 
-    // 用户触发广告后，显示激励视频广告
-    if (videoAd) {
-      videoAd.show().catch(() => {
-        // 失败重试
-        videoAd.load()
-          .then(() => videoAd.show())
-          .catch(err => {
-            console.log('激励视频 广告显示失败')
+    // Display interstitial ads in suitable scenes
+    if (interstitialAd) {
+      interstitialAd.show().catch((err) => {
+        console.error(err)
+      })
+    }
+    /*
+        // 在页面中定义激励视频广告
+        let videoAd = null
+
+        // 在页面onLoad回调事件中创建激励视频广告实例
+        if (wx.createRewardedVideoAd) {
+          videoAd = wx.createRewardedVideoAd({
+            adUnitId: 'adunit-9116c0ec2e664d5b'
           })
-      })
-    }
+          videoAd.onLoad(() => {})
+          videoAd.onError((err) => {})
+          videoAd.onClose((res) => {   
+            // The user has clicked the **Close Ad** button
+            if (res && res.isEnded) {
+              // After the normal playback ends, game reward can be issued
+            } else {
+              // Exit before playback ends, no game reward is issued.
+            }})
+        }
 
-    */
+        // 用户触发广告后，显示激励视频广告
+        if (videoAd) {
+          videoAd.show().catch(() => {
+            // 失败重试
+            videoAd.load()
+              .then(() => videoAd.show())
+              .catch(err => {
+                console.log('激励视频 广告显示失败')
+              })
+          })
+        }
+
+        */
     if (!wx.cloud) {
       wx.redirectTo({
         url: '../chooseLib/chooseLib',

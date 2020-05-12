@@ -12,8 +12,15 @@
       <view class="content" wx:key="key" wx:for="{{item.content}}">
         {{item.para}}
         <view wx:if="{{item.pic}}">
-          <image class="image" src="{{item.pic}}"></image>
+          <image class="image" mode="aspectFit" src="{{item.pic}}"></image>
 
+        </view>
+        <view wx:if="{{item.promo}}">
+          <view class="ads-container">
+            <block class="ad">
+              <ad unit-id="{{item.promo}}"> </ ad>
+            </block>
+          </view>
         </view>
       </view>
       <view class="content">Source: {{item.source}}</view>
