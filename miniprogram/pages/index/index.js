@@ -14,14 +14,24 @@ Page({
     interval: 11000,
     duration: 1000,
     list: [{
-        "text": "",
-        "iconPath": "../../icons/home-2-fill.png",
-        "selectedIconPath": "../../icons/home-2-fill.png",
+        "text": "Home",
+        "iconPath": "../../icons/home.png",
+        "selectedIconPath": "../../icons/home.png",
       },
       {
-        "text": "",
+        "text": "News",
         "iconPath": "../../icons/news.png",
         "selectedIconPath": "../../icons/news.png",
+      },
+      {
+        "text": "Cart",
+        "iconPath": "../../icons/shopping-cart.png",
+        "selectedIconPath": "../../icons/shopping-cart.png",
+      },
+      {
+        "text": "Account",
+        "iconPath": "../../icons/account.png",
+        "selectedIconPath": "../../icons/account.png",
       }
     ],
 

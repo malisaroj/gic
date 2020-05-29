@@ -33,7 +33,7 @@
 }
 
 .container {
-  padding-bottom: 100rpx;
+  padding-bottom: 200rpx;
 }
 
 .icon {

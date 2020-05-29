@@ -18,7 +18,7 @@
       <block wx:for="{{banners}}" wx:key="key">
         <swiper-item data-id="{{item._id}}" bindtap="viewBanners">
 
-          <image mode="aspectFill" src="{{item.imgUrl}}" class="slide-image swipimg" width="355" height="200" />
+          <image mode="aspectFill" src="{{item.thumbnail}}" class="slide-image swipimg" width="355" height="200" />
           <view class="banner-text">{{item.title}}</view>
         </swiper-item>
       </block>
